@@ -168,6 +168,7 @@ def fast_process(
     plt.axis("off")
     fig = plt.gcf()
     plt.draw()
+    fig.canvas.draw()
     buf = fig.canvas.tostring_rgb()
     cols, rows = fig.canvas.get_width_height()
     img_array = np.fromstring(buf, dtype=np.uint8).reshape(rows, cols, 3)
